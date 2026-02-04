@@ -1,7 +1,5 @@
 /* 기본타입 */
 
-import { extname } from "node:path";
-
 let myName: string ="Gemini"; 
 // : string : 문자열(텍스트)만 들어갈 수 있음
 let myAge: number = 20;
@@ -43,7 +41,7 @@ let student2: Student = {
 
 /*함수타입*/
 
-// (a는 숫자, b는 숫자)를 받아서 반환하는 함수
+// (a는 숫자, b는 숫자)를 받아서 '숫자'를 반환하는 함수
 function add(a: number, b: number): number {
     //       ---------  ---------
     // a,b는 매개변수(parameter): 함수에 들어가는 입력값
@@ -95,11 +93,11 @@ interface Animal {
 // Animal의 기능을 물려 받은 Dog 인터페이스
 interface Dog extends Animal {
     //extends 상속/확장
-    breed: String; // 견종 추가
+    breed: string; // 견종 추가
 }
 
 const myDog: Dog = {
-//const : 변수를 선언할때 쓰는 키워드
+//const는 상수를 선언할 때 사용하며, 재할당이 불가능
     name: "뭉치",
     breed: "골든 리트리버"
 };
@@ -149,4 +147,3 @@ cart.forEach((item) => {
 // `` : 문자열 사이에 변수를 편하게 넣을 때 씀
     console.log(`${item.manufacturer}에서 만든 ${item.name}의 가격은 ${item.price}원 입니다`);
 })
-
