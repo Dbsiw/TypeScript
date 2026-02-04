@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    /* 기본 설정 */
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": ["esnext"],
+    
+    /* 폴더 설정 (src에 있는걸 dist로!) */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* 에러 해결 핵심: types 설정을 제거하거나 node 추가 */
+    "types": ["node"],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* 엄격한 검사 및 기타 옵션 */
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "moduleDetection": "force"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
