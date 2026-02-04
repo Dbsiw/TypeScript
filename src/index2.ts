@@ -149,3 +149,39 @@ console.log(someCar,brandOnly);
 // 설명 : "이 클래스가 자기 자신"을 가리키는 말.
 // 내 안에 있는 변수나 함수를 부를때 씀
 
+// 예시
+
+class Employee {
+    // 1. 속성정의 (접근 제한자 사용)
+    private id: number; // 밖에서 수정 불가
+    public name: string;
+    protected department: string;
+
+    // 2. 생성자: 처음 만들 때 값을 넣어줌
+    constructor(id: number, name: string, dept: string) {
+        this.id = id;
+        this.name = name;
+        this.department = dept;
+    }
+
+    // 3. 메서드 (함수): 직원이 하는 일
+    work(): void{
+        console.log(`${this.name}이(가) ${this.department} 부서에서 일하고 있습니다.`);
+    }
+}
+    // 4. 인스턴스(실제 객체) 생성
+    const worker = new Employee(101, "김철수", "개발팀");
+    worker.work(); // 출력: 김철수이(가) 개발팀 부서에서 일하고 있습니다.
+
+    /* 클래스와 인터페이스의 조합 */
+    interface Logger {
+        log(msg: string): void;
+    }
+
+    // ConsoleLogger 클래스는 Logger 인터페이스를 "구현"해야 함
+    class ConsoleLogger implements Logger {
+        log(msg: string) {
+            console.log(`[LOG]: ${msg}`);
+        }
+    }
+
